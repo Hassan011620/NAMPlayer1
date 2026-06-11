@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#FF9800</item>
+        <item name="colorPrimaryVariant">#E65100</item>
+        <item name="colorOnPrimary">#000</item>
+        <item name="colorSecondary">#43A047</item>
+        <item name="colorOnSecondary">#000</item>
+        <item name="colorSurface">#161616</item>
+        <item name="colorOnSurface">#FFF</item>
+        <item name="android:colorBackground">#0D0D0D</item>
+        <item name="android:statusBarColor">#0D0D0D</item>
+        <item name="android:navigationBarColor">#0D0D0D</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="bottomSheetDialogTheme">@style/BottomSheet</item>
+    </style>
+
+    <style name="BottomSheet" parent="Theme.MaterialComponents.BottomSheetDialog">
+        <item name="android:colorBackground">#161616</item>
+        <item name="colorSurface">#161616</item>
+    </style>
+</resources>

@@ -1,0 +1,8 @@
+-keep class com.namplayer.converter.** { *; }
+-keep class com.namplayer.engine.** { *; }
+-keep class com.namplayer.usb.** { *; }
+-keep class ai.onnxruntime.** { *; }
+-keep class com.google.gson.** { *; }
+-keepattributes Signature,*Annotation*
+-dontwarn ai.onnxruntime.**
+-dontwarn com.google.gson.**

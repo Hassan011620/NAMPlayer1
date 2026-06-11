@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- USB Audio Class 1 & 2 -->
+    <usb-device class="1" subclass="1" protocol="0"/>
+    <usb-device class="1" subclass="2" protocol="0"/>
+    <usb-device class="1" subclass="3" protocol="0"/>
+    <!-- Focusrite -->
+    <usb-device vendor-id="0x1235"/>
+    <!-- Behringer / Midas -->
+    <usb-device vendor-id="0x1397"/>
+    <!-- PreSonus -->
+    <usb-device vendor-id="0x194F"/>
+    <!-- Line 6 -->
+    <usb-device vendor-id="0x0E41"/>
+    <!-- Steinberg -->
+    <usb-device vendor-id="0x0499"/>
+    <!-- IK Multimedia -->
+    <usb-device vendor-id="0x2B03"/>
+    <!-- MOTU -->
+    <usb-device vendor-id="0x07FD"/>
+    <!-- RME -->
+    <usb-device vendor-id="0x2A39"/>
+    <!-- M-Audio -->
+    <usb-device vendor-id="0x0763"/>
+    <!-- Roland / Boss -->
+    <usb-device vendor-id="0x0582"/>
+    <!-- Native Instruments -->
+    <usb-device vendor-id="0x17CC"/>
+    <!-- Universal Audio -->
+    <usb-device vendor-id="0x1F98"/>
+</resources>

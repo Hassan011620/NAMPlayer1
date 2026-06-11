@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0D0D"
+    android:fillViewport="true">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- ── HEADER ── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+        <View android:id="@+id/dot"
+            android:layout_width="10dp" android:layout_height="10dp"
+            android:background="@drawable/dot_grey" android:layout_marginEnd="8dp"/>
+        <TextView android:id="@+id/tvState"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="متوقف" android:textColor="#888" android:textSize="13sp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="NAM" android:textColor="#FF9800"
+            android:textSize="18sp" android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- ── MODEL ── -->
+    <TextView android:id="@+id/tvModel"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="لا يوجد موديل" android:textColor="#FFF"
+        android:textSize="20sp" android:textStyle="bold" android:layout_marginBottom="2dp"/>
+    <TextView android:id="@+id/tvArch"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="" android:textColor="#FF9800"
+        android:textSize="12sp" android:layout_marginBottom="4dp"/>
+
+    <!-- Cabinet status -->
+    <TextView android:id="@+id/tvCab"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Cabinet: off" android:textColor="#666"
+        android:textSize="11sp" android:layout_marginBottom="16dp"/>
+
+    <!-- ── BIG PLAY ── -->
+    <Button android:id="@+id/btnPlay"
+        android:layout_width="match_parent" android:layout_height="68dp"
+        android:text="▶" android:textSize="28sp"
+        android:textColor="#0D0D0D" android:backgroundTint="#43A047"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- ── REC BUTTON ── -->
+    <Button android:id="@+id/btnRecord"
+        android:layout_width="match_parent" android:layout_height="44dp"
+        android:text="⏺ REC" android:textSize="14sp"
+        android:textColor="#FFF" android:backgroundTint="#333"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- ── VU METERS ── -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:background="#1A1A1A"
+        android:padding="12dp" android:layout_marginBottom="12dp">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginBottom="6dp">
+            <TextView android:layout_width="28dp" android:layout_height="wrap_content"
+                android:text="IN" android:textColor="#888" android:textSize="10sp"/>
+            <ProgressBar android:id="@+id/vuIn"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="8dp" android:max="100"
+                android:progressTint="#43A047"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical">
+            <TextView android:layout_width="28dp" android:layout_height="wrap_content"
+                android:text="OUT" android:textColor="#888" android:textSize="10sp"/>
+            <ProgressBar android:id="@+id/vuOut"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="8dp" android:max="100"
+                android:progressTint="#FF9800"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ── GAIN SLIDERS ── -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:background="#1A1A1A"
+        android:padding="12dp" android:layout_marginBottom="12dp">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical">
+            <TextView android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content" android:text="Input"
+                android:textColor="#AAA" android:textSize="12sp"/>
+            <TextView android:id="@+id/tvIn" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="0dB"
+                android:textColor="#43A047" android:textSize="12sp"/>
+        </LinearLayout>
+        <com.google.android.material.slider.Slider android:id="@+id/sliderIn"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:valueFrom="-20" android:valueTo="20" android:value="0" android:stepSize="1"
+            app:thumbColor="#43A047" app:trackColorActive="#43A047" app:trackColorInactive="#333"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical">
+            <TextView android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content" android:text="Output"
+                android:textColor="#AAA" android:textSize="12sp"/>
+            <TextView android:id="@+id/tvOut" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="0dB"
+                android:textColor="#FF9800" android:textSize="12sp"/>
+        </LinearLayout>
+        <com.google.android.material.slider.Slider android:id="@+id/sliderOut"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:valueFrom="-20" android:valueTo="20" android:value="0" android:stepSize="1"
+            app:thumbColor="#FF9800" app:trackColorActive="#FF9800" app:trackColorInactive="#333"/>
+    </LinearLayout>
+
+    <!-- ── NOISE GATE ── -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:background="#1A1A1A"
+        android:padding="12dp" android:layout_marginBottom="12dp">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginBottom="4dp">
+            <TextView android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content" android:text="🔇 Noise Gate"
+                android:textColor="#DDD" android:textSize="13sp"/>
+            <TextView android:id="@+id/tvGate" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="-60dB"
+                android:textColor="#888" android:textSize="12sp" android:layout_marginEnd="8dp"/>
+            <Switch android:id="@+id/switchGate"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:checked="false" android:thumbTint="#FF9800" android:trackTint="#333"/>
+        </LinearLayout>
+
+        <com.google.android.material.slider.Slider android:id="@+id/sliderGate"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:valueFrom="-80" android:valueTo="-20" android:value="-60" android:stepSize="1"
+            android:enabled="false"
+            app:thumbColor="#888" app:trackColorActive="#888" app:trackColorInactive="#333"/>
+    </LinearLayout>
+
+    <!-- ── STATS ── -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_marginBottom="12dp">
+
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:orientation="vertical"
+            android:gravity="center" android:background="#1A1A1A" android:padding="8dp"
+            android:layout_marginEnd="4dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Latency" android:textColor="#666" android:textSize="10sp"/>
+            <TextView android:id="@+id/tvLatency" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="0ms"
+                android:textColor="#43A047" android:textSize="15sp" android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:orientation="vertical"
+            android:gravity="center" android:background="#1A1A1A" android:padding="8dp"
+            android:layout_marginEnd="4dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="CPU" android:textColor="#666" android:textSize="10sp"/>
+            <TextView android:id="@+id/tvCpu" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="0%"
+                android:textColor="#FF9800" android:textSize="15sp" android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:orientation="vertical"
+            android:gravity="center" android:background="#1A1A1A" android:padding="8dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="SR" android:textColor="#666" android:textSize="10sp"/>
+            <TextView android:id="@+id/tvSr" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="48k"
+                android:textColor="#EEE" android:textSize="15sp" android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- xrun -->
+    <TextView android:id="@+id/tvXrun"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:textColor="#FFEB3B" android:textSize="11sp" android:gravity="center"
+        android:visibility="gone" android:layout_marginBottom="8dp"/>
+
+    <!-- ── BOTTOM BUTTONS ── -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_marginBottom="8dp">
+        <Button android:id="@+id/btnOpen"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="46dp" android:layout_marginEnd="6dp"
+            android:text="📂 .nam" android:textSize="12sp"
+            android:backgroundTint="#1A1A1A" android:textColor="#EEE"/>
+        <Button android:id="@+id/btnCab"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="46dp" android:layout_marginEnd="6dp"
+            android:text="🔊 Cabinet" android:textSize="12sp"
+            android:backgroundTint="#1A1A1A" android:textColor="#EEE"/>
+        <Button android:id="@+id/btnUsb"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="46dp"
+            android:text="🔌 USB" android:textSize="12sp"
+            android:backgroundTint="#1A1A1A" android:textColor="#EEE"/>
+    </LinearLayout>
+
+    <!-- Loading -->
+    <ProgressBar android:id="@+id/progress"
+        android:layout_width="32dp" android:layout_height="32dp"
+        android:layout_gravity="center" android:indeterminateTint="#FF9800"
+        android:visibility="gone"/>
+
+</LinearLayout>
+</ScrollView>
